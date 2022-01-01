@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>
+            jQuery Crash Course: Youtube, Traversy Media
+        </title>
+        <script src="js/jquery-3.6.0.js"></script>
+        <style>
+            body{
+                font-size: 17px;
+                font-family: arial;
+                background: #f4f4f4;
+                line-height: 1.5em;
+            }
+            header{
+                background: #333;
+                color:#fff;
+                padding: 20px;
+                text-align: center;
+                border-bottom: 4px rgb(255, 14, 14) solid;
+                margin-bottom: 10px;
+            }
+            #container{
+                width: 90%;
+                margin: auto;
+                padding: 10px
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            jQuery Crash Course
+        </header>
+        <div id="container">
+            <h1>Selectors</h1>
+            <h3 id="heading1">Heading One.</h3>
+            <p id="para0">All red colors was targeted by a selector in JavaScript.</p>
+            <p id="para1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+            <h3 id="heading2">Heading Two.</h3>
+            <p id="para2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+            <input type="button" value="Button 1">
+            <input type="submit" value="Submit">
+            <input type="text" value>
+
+            <br><br>
+
+            <a href="http://google.com">Google</a>
+            <a href="https://www.youtube.com/watch?v=3nrLc_JOF7k">Crash Course Youtube.</a> 
+
+            <h1> Mouse Events</h1>
+            <button id="btn1hide"> Hide text</button>
+            <button id="btn2show"> show text</button>  
+            <p id="para3">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        </div>
+
+        <script>
+            // tags selectors
+            $("h1#heading2").css("color", "red");
+            $("p#para2").css("color", "red");
+
+            //type selector:
+            $(":submit").css("color", "red");
+
+            //select to a href
+            $("a[href='http://google.com']").css("color", "red");
+
+            // If the document is loaded completely, then run function.
+            $(document).ready(function(){
+                //buttons with funtions
+                $("#btn1hide").click(function(){
+                    $("#para3").hide();
+                });
+
+                $("#btn2show").click(function(){
+                    $("#para3").show();
+                });
+                
+            })
+
+        </script>
+    </body>
+</html>
