@@ -25,6 +25,12 @@
                 margin: auto;
                 padding: 10px
             }
+            #targets{
+                background: rgb(180, 243, 245)
+            }
+            #code{
+                background: lightgreen;
+            }
         </style>
     </head>
     <body>
@@ -32,23 +38,36 @@
             jQuery Crash Course
         </header>
         <div id="container">
+            <h3 id="coords"></h3>
             <h1>Selectors</h1>
-            <h3 id="heading1">Heading One.</h3>
-            <p id="para0">All red colors was targeted by a selector in JavaScript.</p>
-            <p id="para1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+            <div id="targets">
+                <h3 id="heading1">&lt;h3 id="heading1"&gt; Heading One.&lt;/h3&gt;</h3>
+                <p id="paragraph0">&lt;p id="paragraph0"&gt; All red colors was targeted by a selector in JavaScript.</p>
+                <p id="paragraph1">&lt;id="paragraph1"&gt; Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-            <h3 id="heading2">Heading Two.</h3>
-            <p id="para2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                <h3 id="heading2">Heading Two.</h3>
+                <p id="paragraph2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 
-            <input type="button" value="Button 1">
-            <input type="submit" value="Submit">
-            <input type="text" value>
+                <input type="button" value="Button 1">
+                <input type="submit" value="Submit">
+                <input type="text" value>
 
-            <br><br>
+                <br><br>
 
-            <a href="http://google.com">Google</a>
-            <a href="https://www.youtube.com/watch?v=3nrLc_JOF7k">Crash Course Youtube.</a> 
-
+                <a href="http://google.com">Google</a>
+                <a href="https://www.youtube.com/watch?v=3nrLc_JOF7k">Crash Course Youtube.</a> 
+            </div>
+            <div id="code">
+                // tags selectors<br>
+                $("h3#heading1").css("color", "red");<br>
+                $("p#paragraph1").css("color", "red");<br><br>
+    
+                //type selector:<br>
+                $(":submit").css("color", "red");<br><br>
+    
+                //select to a href<br>
+                $("a[href='http://google.com']").css("color", "red");<br><br>    
+            </div>
             <h1> Mouse Events</h1>
             <button id="btn1hide"> Hide text</button>
             <button id="btn2show"> show text</button>  
@@ -57,8 +76,8 @@
 
         <script>
             // tags selectors
-            $("h1#heading2").css("color", "red");
-            $("p#para2").css("color", "red");
+            $("h3#heading1").css("color", "red");
+            $("p#para1").css("color", "red");
 
             //type selector:
             $(":submit").css("color", "red");
@@ -76,6 +95,11 @@
                 $("#btn2show").click(function(){
                     $("#para3").show();
                 });
+
+                $(document).on("mousemove", function(e){
+                    console.log("Coords: " + e.screenX + ", " + e.screenY);
+                    $("#coords").html("Mouse cursor coords: " + e.screenX + ", " + e.screenY);
+                })
                 
             })
 
